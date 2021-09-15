@@ -1,9 +1,9 @@
 public class Person {
     private String firstName;
     private String lastName;
-    private byte age;
+    private int age;
 
-    public Person(String firstName, String lastName, byte age) {
+    public Person(String firstName, String lastName, int age) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
@@ -29,7 +29,7 @@ public class Person {
         return lastName;
     }
 
-    public byte getAge() {
+    public int getAge() {
         return age;
     }
 
