@@ -45,49 +45,49 @@ public class ObjectsVsPrimitiveVariables2_Complete {
         System.out.printf("person1's full name is set to: %s\n", person1.getFullName());
         System.out.printf("person2's full name is set to: %s\n", person2.getFullName());
 
-        // Next, change person2's first name
+        // // Next, change person2's first name
         person2.changeFirstName("Deaisha");
 
-        /*
-            Finally, print the full name of each object to see that because person1's reference
-            was copied to the person2 object, the two objects are now connected bceause their 
-            variables have the same reference to the same object in memory. So any change you 
-            make to one of them will affect the other
-        */
+        // /*
+        //     Finally, print the full name of each object to see that because person1's reference
+        //     was copied to the person2 object, the two objects are now connected bceause their 
+        //     variables have the same reference to the same object in memory. So any change you 
+        //     make to one of them will affect the other
+        // */
         System.out.printf("person1's full name is now set to person2's: %s\n", person1.getFullName());
         System.out.printf("person2's full name is now set to: %s\n", person2.getFullName());
 
         System.out.println();
 
-        /*
-            If this confuses you, go back to the credit card analogy. Imagine you and your parent 
-            have 2 credit cards with the same credit card number. When you use your card, your dad's
-            credit card balance increases. When your dad uses the card, the smae credit card balance 
-            increases. This is because the two credit cards are copies of another. The data they hold
-            is a reference to the same credit card account.
+        // /*
+        //     If this confuses you, go back to the credit card analogy. Imagine you and your parent 
+        //     have 2 credit cards with the same credit card number. When you use your card, your dad's
+        //     credit card balance increases. When your dad uses the card, the smae credit card balance 
+        //     increases. This is because the two credit cards are copies of another. The data they hold
+        //     is a reference to the same credit card account.
 
-            When two objects have the same reference to the same object in memory, the two objects are 
-            said to be "aliases" of one another. If you do not want to create aliases, simply use the 
-            class' constructor to initialize each object.
+        //     When two objects have the same reference to the same object in memory, the two objects are 
+        //     said to be "aliases" of one another. If you do not want to create aliases, simply use the 
+        //     class' constructor to initialize each object.
 
-            When you use the class' constructor to create an object, it is said that you "instantiate" 
-            the object. So, "instantiate an object" means create a new object with the class' constructor
+        //     When you use the class' constructor to create an object, it is said that you "instantiate" 
+        //     the object. So, "instantiate an object" means create a new object with the class' constructor
 
-            E.g.
-        */
+        //     E.g.
+        // */
         person1 = new Person("Adrian", "Rodriguez", 36);
         person2 = new Person("Merna", "Alahmadi", 32);
 
-        // Print the full name of each object to see they have different names
-        System.out.printf("person1's full name is set to: %s\n", person1.getFullName());
-        System.out.printf("person2's full name is set to: %s\n", person2.getFullName());
+        // // Print the full name of each object to see they have different names
+        // System.out.printf("person1's full name is set to: %s\n", person1.getFullName());
+        // System.out.printf("person2's full name is set to: %s\n", person2.getFullName());
 
-        // Now change any of the objects
-        person2.changeLastName("Al-Ghamdi");
+        // // Now change any of the objects
+        // person2.changeLastName("Al-Ghamdi");
 
-        // Now, print the full name of each object to see they still have different names
-        System.out.printf("person1's full name is still set to: %s\n", person1.getFullName());
-        System.out.printf("person2's full name is now changed without affecting person1: %s\n", person2.getFullName());
+        // // Now, print the full name of each object to see they still have different names
+        // System.out.printf("person1's full name is still set to: %s\n", person1.getFullName());
+        // System.out.printf("person2's full name is now changed without affecting person1: %s\n", person2.getFullName());
 
         System.out.println();
     }
