@@ -8,25 +8,21 @@ public class Quiz3 {
     public static void main(String[] args) {
         System.out.println();
 
-        System.out.println();
+        Scanner keyboard = new Scanner(System.in);
 
-        Scanner console = new Scanner(System.in);
+        System.out.print("Please enter 5 numbers: ");
 
-        System.out.println("Please enter the 5 numbers: ");
-    
         double num1, num2, num3, num4, num5;
-        double num1 = console.nextDouble();
-        double num2 = console.nextDouble();
-        double num3 = console.nextDouble();
-        double num4 = console.nextDouble();
-        double num5 = console.nextDouble();
+        num1 = keyboard.nextDouble();
+        num2 = keyboard.nextDouble();
+        num3 = keyboard.nextDouble();
+        num4 = keyboard.nextDouble();
+        num5 = keyboard.nextDouble();
 
-        console.close();
-        
         double sum = num1 + num2 + num3 + num4 + num5;
-        System.out.printf("The sum of %, %, %, %, and % is %d. \n", num1, num2, num3, num4, num5);
+        System.err.printf("The sum of %.1f, %.1f, %.1f, %.1f, and %.1f is %.1f\n", num1, num2, num3, num4, num5, sum);
 
-        System.out.println();
+        keyboard.close();
 
         System.out.println();
     }
