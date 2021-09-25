@@ -1,26 +1,27 @@
 import java.util.*;
 
+/**
+ * Repeater
+ */
 public class Repeater {
     public static void main(String[] args) {
         System.out.println();
 
-        Scanner keyboard = new Scanner(System.in);
-        System.out.print("Please enter a word to scramble: ");
-        String word = keyboard.nextLine();
+        Scanner console = new Scanner(System.in);
+        System.out.print("Please enter a word: ");
+        String word = console.nextLine();
+        System.out.println(word);
 
         Random random = new Random();
-        int index = random.nextInt(word.length());
-        System.out.printf("The index is %d\n", index);
+        int firstIndex = random.nextInt(word.length());
+        int secondIndex = random.nextInt(word.length());
 
-        String letter = word.substring(index, index + 1);
-        System.out.printf("The letter is %s\n", letter);
+        char firstCharacter = word.charAt(firstIndex);
+        char secondCharacter = word.charAt(secondIndex);
 
-        String letters = letter.repeat(word.length());
-
-        word = letters.concat(word).concat(letters);
-        System.out.println(word);
+        String repeatedFirstCharacter = (firstCharacter + "").repeat(word.length());
         
-        keyboard.close();
+
         System.out.println();
     }
 }
