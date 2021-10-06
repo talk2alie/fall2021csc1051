@@ -7,8 +7,13 @@ public class ShutesAndLadder {
         System.out.println();
 
         Die die = new Die(8);
-        die.roll();
         System.out.println(die);
+
+        Die die2 = new Die();
+        System.out.println(die2);
+
+        System.out.println(die.equals(die2));
+        
 
         System.out.println();
     }

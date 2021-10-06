@@ -27,4 +27,12 @@ public class Die {
     public String toString() {
         return value + "";
     }
+
+    public int compareTo(Die obj) {
+         return (sides - obj.sides) + (value - obj.value);
+    }
+
+    public boolean equals(Die obj) {
+        return sides == obj.sides && value == obj.value;
+    }
 }
