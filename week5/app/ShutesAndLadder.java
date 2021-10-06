@@ -6,10 +6,9 @@ public class ShutesAndLadder {
     public static void main(String[] args) {
         System.out.println();
 
-        Die die = new Die(100);
-        int dieValue = die.roll();
-        System.out.println(dieValue);
-
+        Die die = new Die(8);
+        die.roll();
+        System.out.println(die);
 
         System.out.println();
     }
