@@ -4,7 +4,7 @@ public class TheIfStatement {
 
         /*
         
-            if(<boolean expression) {
+            if(<boolean expression>) {
                 <statements to execute when boolean expression is true 
             }
 

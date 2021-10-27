@@ -23,6 +23,6 @@ public class ComparisonOperators {
          */
 
          TodoItem item = new TodoItem("Eat all day", "2021-10-24");
-         item.changeStatus("Let's roll");
+         item.changeStatus(ItemStatus.Completed);
     }
 }

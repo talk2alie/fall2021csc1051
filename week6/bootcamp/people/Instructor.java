@@ -1,12 +1,14 @@
 package bootcamp.people;
 
 public class Instructor {
+    private Title title;
     private String firstName;
     private String middleName;
     private String lastName;
     private int staffId;
 
     public Instructor(int staffId, String firstName, String middleName, String lastName) {
+        this.title = Title.Dr;
         this.staffId = staffId;
         this.firstName = firstName;
         this.middleName = middleName;
