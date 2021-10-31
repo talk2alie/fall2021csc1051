@@ -31,6 +31,12 @@ public class ConsoleTodoApp {
         list.addItem(item3);
         System.out.println(list);
 
+        item.changeStatus(TodoItemStatus.Completed);
+        item1.changeStatus(TodoItemStatus.Completed);
+        item3.changeStatus(TodoItemStatus.Completed);
+        System.out.println(list);
+        System.out.println(list.isComplete());
+
         System.out.println();
     }
 }
