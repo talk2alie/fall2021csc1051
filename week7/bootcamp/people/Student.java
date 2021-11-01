@@ -1,0 +1,37 @@
+package bootcamp.people;
+
+import java.util.HashSet;
+
+import bootcamp.courses.Enrollment;
+
+public class Student {
+    private String firstName;
+    private String middleName;
+    private String lastName;
+    private int enrollmentId;
+    private HashSet<Enrollment> enrollments;
+
+    public Student(int enrollementId, String firstName, String middleName, String lastName) {
+        this.enrollmentId = enrollementId;
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.lastName = lastName;
+        this.enrollments = new HashSet<>();
+    }
+
+    public int getEnrollmentId() {
+        return enrollmentId;
+    }
+
+    public void addEnrollment(Enrollment enrollment) {
+        enrollments.add(enrollment);
+    }
+
+    public String toString() {
+        return String.format("%s%s%s", firstName, middleName == null || middleName.length() == 0 ? " " : " " + middleName + " ", lastName);
+    }
+
+    public String toTable() {
+        return String.format("%d,%s,%s,%s", enrollmentId,firstName,(middleName == null || middleName.length() == 0 ? "" : middleName), lastName);
+    }
+}
