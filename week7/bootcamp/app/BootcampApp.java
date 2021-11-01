@@ -1,6 +1,10 @@
 package bootcamp.app;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Scanner;
+import java.util.StringTokenizer;
 
 import bootcamp.data.Database;
 import bootcamp.people.Instructor;
@@ -11,7 +15,7 @@ public class BootcampApp {
     public static void main(String[] args) throws IOException {
         System.out.println();
 
-        Database database = new Database();
+        /*Database database = new Database();
 
         System.out.println("Students");
         database.printStudents();
@@ -30,7 +34,27 @@ public class BootcampApp {
         database.saveInstructor(i);
         System.out.println();
         System.out.println("Instructors after add");
-        database.printInstructors();
+        database.printInstructors();*/
+
+        Student[] students = new Student[11];
+
+        File studentsFile = new File("bootcamp\\data\\students.tbl");
+        Scanner scanner = new Scanner(studentsFile);
+        if(scanner.hasNextLine()) {
+            scanner.nextLine();
+        }
+        while(scanner.hasNextLine()) {
+           String line = scanner.nextLine();
+           String[] tokens = line.split(",");
+           String enrollmentId = tokens[0];
+           String firstName = tokens[1];
+           String middleName = tokens[2];
+           String lastName = tokens[3];
+           Student currentStudent = new Student(Integer.parseInt(enrollmentId), firstName, middleName, lastName);
+           students[currentStudent.getEnrollmentId() - 1] = currentStudent;
+        }
+        scanner.close();
+
 
         System.out.println();
     }
