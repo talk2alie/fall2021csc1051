@@ -4,6 +4,8 @@ import java.time.LocalDate;
 import java.util.Hashtable;
 
 public class TodoItem {
+    private int id;
+    private int todoListId;
     private String title;
     private LocalDate dueDate;
     private TodoItemStatus status;
@@ -14,7 +16,9 @@ public class TodoItem {
      * @param dueDate - the date on which the item is expected to be completed
      * @param status - the current status of the item. Default is New
      */
-    public TodoItem(String title, String dueDate, TodoItemStatus status) {
+    public TodoItem(int id, int todoListId, String title, String dueDate, TodoItemStatus status) {
+        this.id = id;
+        this.todoListId = todoListId;
         this.title = title;
         this.dueDate = LocalDate.parse(dueDate.trim());
         this.status = status;
@@ -25,8 +29,16 @@ public class TodoItem {
      * @param title - the title of the item
      * @param dueDate - the date on which the item is expected to be completed
      */
-    public TodoItem(String title, String dueDate) {
-        this(title, dueDate, TodoItemStatus.New);
+    public TodoItem(int id, int todoListId, String title, String dueDate) {
+        this(id, todoListId, title, dueDate, TodoItemStatus.New);
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public int getTodoListId() {
+        return todoListId;
     }
 
     public void changeTitle(String title) {
@@ -55,6 +67,10 @@ public class TodoItem {
 
     public boolean isComplete() {
         return status == TodoItemStatus.Completed;
+    }
+
+    public String toTable() {
+        return String.format("%d,%d,%s,%s,%s", id, todoListId, title, dueDate, status);
     }
 
     public String toString() {

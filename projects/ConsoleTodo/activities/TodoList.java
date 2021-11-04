@@ -4,14 +4,20 @@ import java.time.LocalDate;
 import java.util.Hashtable;
 
 public class TodoList {
+    private int id;
     private String title;
     private LocalDate dueDate;
     private Hashtable<String, TodoItem> todoItems;
     
-    public TodoList(String title, String dueDate) {
+    public TodoList(int id, String title, String dueDate) {
+        this.id = id;
         this.title = title;
         this.dueDate = LocalDate.parse(dueDate.trim());
         todoItems = new Hashtable<>();
+    }
+
+    public int getId() {
+        return id;
     }
 
     public void changeTitle(String title) {
@@ -50,6 +56,10 @@ public class TodoList {
         }
 
         return true;
+    }
+
+    public String toTable() {
+        return String.format("%d,%s,%s", id, title, dueDate);
     }
 
     public String toString() {
