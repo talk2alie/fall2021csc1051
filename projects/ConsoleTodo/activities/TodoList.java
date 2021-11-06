@@ -1,6 +1,7 @@
 package activities;
 
 import java.time.LocalDate;
+import java.util.Collection;
 import java.util.Hashtable;
 
 public class TodoList {
@@ -18,6 +19,10 @@ public class TodoList {
 
     public int getId() {
         return id;
+    }
+
+    public Collection<TodoItem> getItems() {
+        return todoItems.values();
     }
 
     public void changeTitle(String title) {
